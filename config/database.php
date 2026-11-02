@@ -2,17 +2,18 @@
 // config/database.php
 // Konfigurasi koneksi database MySQL menggunakan PDO
 
-$db_host = 'mysql-ruangkisah-amrul.mysql.database.azure.com';
-$db_user = 'adminkisah';
-$db_pass = 'sandimudah#123';
+$db_host = 'localhost';
+$db_user = 'root';
+$db_pass = '';
 $db_name = 'db_cerpen';
 
 try {
-    $pdo = new PDO("mysql:host={$db_host};dbname={$db_name};charset=utf8mb4", $db_user, $db_pass, [
-        PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-        PDO::ATTR_EMULATE_PREPARES   => false,
-    ]);
+    $pdo = new PDO("mysql:host={$db_host};port=3306;dbname={$db_name};charset=utf8mb4", $db_user, $db_pass, [
+    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    PDO::ATTR_EMULATE_PREPARES   => false,
+    PDO::MYSQL_ATTR_SSL_CA       => '/etc/ssl/certs/ca-certificates.crt',
+]);
 } catch (PDOException $e) {
     // Tampilan ramah pengguna jika database belum diimport di phpMyAdmin
     ?>
