@@ -2,9 +2,9 @@
 // config/database.php
 // Konfigurasi koneksi database MySQL menggunakan PDO
 
-$db_host = 'localhost';
-$db_user = 'root';
-$db_pass = '';
+$db_host = 'mysql-ruangkisah-amrul.mysql.database.azure.com';
+$db_user = 'adminkisah';
+$db_pass = 'PASSWORD_MYSQL_AZURE';
 $db_name = 'db_cerpen';
 
 try {
