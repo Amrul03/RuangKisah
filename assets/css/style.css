@@ -1,0 +1,870 @@
+/* ==========================================================
+   RuangKisah - Apple Minimalist Design System
+   Palette: Dark Charcoal, Cream, White, Refined Grays
+   ========================================================== */
+
+:root {
+  /* Apple Dark Charcoal & Surface Palette */
+  --bg-main: #121214;
+  --bg-surface: #1c1c1e;
+  --bg-surface-elevated: #242426;
+  --bg-surface-hover: #2c2c2e;
+  --bg-input: #18181b;
+
+  /* Borders & Separators */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --border-focus: #f5f5f0;
+
+  /* Typography Colors */
+  --text-white: #ffffff;
+  --text-cream: #f6f4ee;
+  --text-cream-muted: #ded8c8;
+  --text-secondary: #a1a1a6;
+  --text-muted: #6e6e73;
+
+  /* Apple Cream & Neutral Accents */
+  --accent-cream: #f4efe6;
+  --accent-cream-dim: rgba(244, 239, 230, 0.12);
+  --accent-cream-glow: rgba(244, 239, 230, 0.2);
+  --accent-charcoal: #2c2c2e;
+  --accent-danger: #ff453a;
+  --accent-success: #32d74b;
+
+  /* System Geometry */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 9999px;
+
+  /* Apple Typography */
+  --font-system: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: -apple-system-ui-serif, "New York", "Charter", "Merriweather", Georgia, serif;
+
+  --transition-fast: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reset & Base Setup */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-cream);
+  font-family: var(--font-system);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* ==========================================================
+   Minimalist Navigation Bar
+   ========================================================== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(18, 18, 20, 0.82);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 14px 0;
+}
+
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 17px;
+  letter-spacing: -0.02em;
+  color: var(--text-white);
+  transition: var(--transition-fast);
+}
+
+.brand-logo:hover {
+  opacity: 0.85;
+}
+
+.brand-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--text-cream);
+  box-shadow: 0 0 10px var(--accent-cream-glow);
+}
+
+.brand-name {
+  color: var(--text-white);
+  font-weight: 600;
+}
+
+.brand-name span {
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ==========================================================
+   Apple-style Minimalist Buttons
+   ========================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 18px;
+  font-size: 13.5px;
+  font-weight: 500;
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  font-family: var(--font-system);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--text-cream);
+  color: #121214;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(246, 244, 238, 0.18);
+}
+
+.btn-secondary {
+  background: var(--bg-surface-elevated);
+  color: var(--text-cream);
+  border-color: var(--border-subtle);
+}
+
+.btn-secondary:hover {
+  background: var(--bg-surface-hover);
+  border-color: var(--border-strong);
+  color: #ffffff;
+}
+
+.btn-outline-danger {
+  background: transparent;
+  color: var(--accent-danger);
+  border-color: rgba(255, 69, 58, 0.3);
+}
+
+.btn-outline-danger:hover {
+  background: rgba(255, 69, 58, 0.12);
+  border-color: var(--accent-danger);
+}
+
+.btn-sm {
+  padding: 6px 14px;
+  font-size: 12.5px;
+}
+
+.btn-lg {
+  padding: 12px 28px;
+  font-size: 15px;
+}
+
+/* ==========================================================
+   Dashboard Hero & Highlights
+   ========================================================== */
+.hero-section {
+  padding: 64px 0 36px;
+  text-align: left;
+}
+
+.hero-tagline {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.hero-title {
+  font-size: clamp(34px, 4.5vw, 52px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  color: var(--text-white);
+  margin-bottom: 14px;
+}
+
+.hero-title .highlight-text {
+  color: var(--text-cream);
+  background: linear-gradient(180deg, #ffffff 0%, #ded8c8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-desc {
+  color: var(--text-secondary);
+  font-size: 17px;
+  max-width: 580px;
+  line-height: 1.5;
+  margin-bottom: 28px;
+  font-weight: 400;
+}
+
+/* Minimal Stats Bar */
+.stats-bar {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 18px 0;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: 40px;
+}
+
+.stat-item {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.stat-num {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-white);
+  letter-spacing: -0.02em;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.stat-divider {
+  width: 1px;
+  height: 18px;
+  background: var(--border-subtle);
+}
+
+/* ==========================================================
+   Controls: Search & Apple Category Pills
+   ========================================================== */
+.controls-wrapper {
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.search-row {
+  display: flex;
+  gap: 12px;
+}
+
+.search-box {
+  flex: 1;
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 14px;
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 10px 16px 10px 38px;
+  color: var(--text-cream);
+  font-size: 14px;
+  font-family: var(--font-system);
+  transition: var(--transition-fast);
+}
+
+.search-input:focus {
+  outline: none;
+  background: var(--bg-surface-elevated);
+  border-color: var(--border-focus);
+}
+
+.search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.sort-select {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 10px 16px;
+  color: var(--text-cream);
+  font-size: 13.5px;
+  font-family: var(--font-system);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.sort-select:focus {
+  outline: none;
+  border-color: var(--border-focus);
+}
+
+.category-nav {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+}
+
+.category-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.category-chip {
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  transition: var(--transition-fast);
+  white-space: nowrap;
+}
+
+.category-chip:hover {
+  background: var(--bg-surface);
+  color: var(--text-cream);
+  border-color: var(--border-strong);
+}
+
+.category-chip.active {
+  background: var(--text-cream);
+  color: #121214;
+  border-color: var(--text-cream);
+  font-weight: 600;
+}
+
+/* ==========================================================
+   Minimalist Story List (Titles Highlighted - No Photos)
+   ========================================================== */
+.stories-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 60px;
+}
+
+.story-item {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 24px 28px;
+  transition: var(--transition-smooth);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.story-item:hover {
+  background: var(--bg-surface-elevated);
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* Top Meta: Category & Reading Time */
+.story-top-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.story-badge {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  background: var(--accent-cream-dim);
+  color: var(--text-cream);
+  border: 1px solid rgba(246, 244, 238, 0.15);
+}
+
+.story-views {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* HIGHLIGHTED TITLE */
+.story-title {
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+  margin-bottom: 10px;
+}
+
+.story-title a {
+  color: var(--text-white);
+  transition: var(--transition-fast);
+}
+
+.story-title a:hover {
+  color: var(--text-cream-muted);
+}
+
+/* Excerpt in Apple Gray */
+.story-synopsis {
+  color: var(--text-secondary);
+  font-size: 14.5px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Bottom Row: Author & Minimal Actions */
+.story-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 13px;
+}
+
+.story-author {
+  color: var(--text-cream);
+  font-weight: 500;
+}
+
+.story-date {
+  color: var(--text-muted);
+  margin-left: 8px;
+}
+
+.story-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.action-link {
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: var(--radius-xs);
+  transition: var(--transition-fast);
+}
+
+.action-link:hover {
+  color: var(--text-white);
+  background: var(--bg-surface-hover);
+}
+
+.action-link.danger:hover {
+  color: var(--accent-danger);
+  background: rgba(255, 69, 58, 0.1);
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 64px 20px;
+  background: var(--bg-surface);
+  border: 1px dashed var(--border-subtle);
+  border-radius: var(--radius-md);
+}
+
+.empty-title {
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--text-white);
+  margin-bottom: 8px;
+}
+
+.empty-desc {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* ==========================================================
+   Minimalist Reader Page (baca.php)
+   ========================================================== */
+.reader-container {
+  max-width: 720px;
+  margin: 40px auto 100px;
+}
+
+.reader-nav-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+  transition: var(--transition-fast);
+}
+
+.reader-nav-back:hover {
+  color: var(--text-white);
+}
+
+.reader-badge-wrap {
+  margin-bottom: 14px;
+}
+
+.reader-title-highlight {
+  font-size: clamp(32px, 4.5vw, 44px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: var(--text-white);
+  margin-bottom: 18px;
+}
+
+.reader-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: 28px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.reader-controls-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.ctrl-btn {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  padding: 4px 10px;
+  border-radius: var(--radius-xs);
+  font-size: 12px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.ctrl-btn:hover {
+  background: var(--bg-surface-elevated);
+  color: var(--text-white);
+}
+
+/* Apple Books Style Reading Area */
+.story-body {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  line-height: 1.85;
+  color: var(--text-cream);
+  letter-spacing: -0.003em;
+}
+
+.story-body p {
+  margin-bottom: 24px;
+}
+
+.story-body p:first-of-type::first-letter {
+  font-size: 40px;
+  float: left;
+  line-height: 1;
+  padding-right: 8px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.reader-footer {
+  margin-top: 56px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ==========================================================
+   Minimalist Form (Create & Edit)
+   ========================================================== */
+.form-box {
+  max-width: 680px;
+  margin: 40px auto 80px;
+}
+
+.form-head {
+  margin-bottom: 32px;
+}
+
+.form-head h1 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text-white);
+  margin-bottom: 6px;
+}
+
+.form-head p {
+  color: var(--text-secondary);
+  font-size: 14.5px;
+}
+
+.minimal-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 32px;
+}
+
+.field {
+  margin-bottom: 22px;
+}
+
+.field-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-cream);
+  margin-bottom: 7px;
+  letter-spacing: -0.01em;
+}
+
+.field-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.input-clean {
+  width: 100%;
+  background: var(--bg-input);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 11px 14px;
+  color: var(--text-white);
+  font-size: 14px;
+  font-family: var(--font-system);
+  transition: var(--transition-fast);
+}
+
+.input-clean:focus {
+  outline: none;
+  border-color: var(--border-focus);
+  background: #1e1e22;
+}
+
+textarea.input-clean {
+  resize: vertical;
+  line-height: 1.6;
+}
+
+textarea.input-clean.story-text {
+  min-height: 260px;
+  font-family: var(--font-serif);
+  font-size: 15.5px;
+  line-height: 1.8;
+}
+
+.field-hint {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 5px;
+}
+
+.btn-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* ==========================================================
+   Toast Alerts
+   ========================================================== */
+.toast-alert {
+  padding: 12px 18px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13.5px;
+  font-weight: 500;
+}
+
+.toast-success {
+  background: rgba(50, 215, 75, 0.12);
+  border: 1px solid rgba(50, 215, 75, 0.25);
+  color: #32d74b;
+}
+
+.toast-error {
+  background: rgba(255, 69, 58, 0.12);
+  border: 1px solid rgba(255, 69, 58, 0.25);
+  color: #ff453a;
+}
+
+.toast-close {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 16px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+/* ==========================================================
+   Minimal Modal (Delete confirmation)
+   ========================================================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(12px);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-fast);
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-box {
+  background: #1c1c1e;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  max-width: 400px;
+  width: 100%;
+  padding: 26px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.modal-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-white);
+  margin-bottom: 8px;
+}
+
+.modal-desc {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 22px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* ==========================================================
+   Footer
+   ========================================================== */
+.site-footer {
+  margin-top: auto;
+  border-top: 1px solid var(--border-subtle);
+  padding: 24px 0;
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-links {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-links a:hover {
+  color: var(--text-secondary);
+}
+
+@media (max-width: 640px) {
+  .field-grid {
+    grid-template-columns: 1fr;
+  }
+  .search-row {
+    flex-direction: column;
+  }
+  .stats-bar {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .stat-divider {
+    display: none;
+  }
+  .footer-content {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}
