@@ -4,7 +4,7 @@
 
 $db_host = 'mysql-ruangkisah-amrul.mysql.database.azure.com';
 $db_user = 'adminkisah';
-$db_pass = 'PASSWORD_MYSQL_AZURE';
+$db_pass = 'sandimudah#123';
 $db_name = 'db_cerpen';
 
 try {
